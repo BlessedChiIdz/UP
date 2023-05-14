@@ -91,5 +91,23 @@ for i in range(0, 100):
     user = (ls[i], lsS[i], lsP[i], lsL[i])
     cur.execute("INSERT OR REPLACE INTO users VALUES(?, ?, ?, ?);", user)
     conn.commit()
-
+print("need search?(1/0)")
+flagI = int(input())
+index = 1000;
+while flagI == 1:
+    index = 1000
+    print("Name?")
+    name = input()
+    for i in range(0, 100):
+        if name == ls[i]:
+            index = i
+    if index != 1000:
+        print(ls[index])
+        print(lsP[index])
+        print(lsL[index])
+        print(lsS[index])
+    else:
+        print("Incorrect Name")
+    print("more search?(1/0)")
+    flagI = int(input())
 time.sleep(10)
